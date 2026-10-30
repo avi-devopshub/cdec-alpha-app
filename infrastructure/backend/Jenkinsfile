@@ -3,7 +3,7 @@
 
 pipeline {
     agent {
-        label 'ecs2'
+        label 'agent'
     }
 
     parameters {
@@ -16,14 +16,14 @@ pipeline {
 
     environment {
         TF_DIR = 'infrastructure/backend'
-        AWS_DEFAULT_REGION = 'eu-west-1'
+        AWS_DEFAULT_REGION = 'ap-south-1'
     }
 
     stages {
 
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/AnupDudhe/cdec-alpha-app.git', branch: 'main'
+                git url: 'https://github.com/avi-devopshub/cdec-alpha-app.git', branch: 'main'
             }
         }
 
