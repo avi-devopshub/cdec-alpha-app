@@ -1,6 +1,6 @@
 # Copy to terraform.tfvars. Do not commit terraform.tfvars.
 
-aws_region   = "us-east-1"
+aws_region   = "ap-south-1"
 environment  = "dev"
 project_name = "cdec-alpha"
 cluster_name = "cdec-eks-dev"
@@ -9,7 +9,7 @@ cluster_name = "cdec-eks-dev"
 vpc_cidr             = "10.0.0.0/16"
 public_subnet_cidrs  = ["10.0.1.0/24", "10.0.2.0/24"]
 private_subnet_cidrs = ["10.0.10.0/24", "10.0.20.0/24"]
-availability_zones   = ["us-east-1a", "us-east-1b"]
+availability_zones   = ["ap-south-1a", "ap-south-1b"]
 
 single_nat_gateway = true
 
@@ -34,6 +34,6 @@ additional_tags = {
 
 # ALB Ingress — AWS Load Balancer Controller + API ingress
 enable_alb_ingress  = true
-ingress_host        = "api.infra-software-architect.online"
-acm_certificate_arn = "arn:aws:acm:us-east-1:593402827940:certificate/c7a03da2-5599-4764-82ad-927baff32f0c"
+ingress_host        = "api.avidevops.fun"
+acm_certificate_arn = "arn:aws:acm:us-east-1:537971897528:certificate/ffd2aea7-f339-46a8-85c4-95266d996f6f"
 alb_name            = "cdec-alpha-alb"
