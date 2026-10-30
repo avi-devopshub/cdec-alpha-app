@@ -3,6 +3,7 @@
 aws_region  = "ap-south-1"
 environment = "dev"
 application = "cdec-alpha-cbzpb3738"
+bucket_name = "avidevops.fun"
 
 acm_certificate_arn = "arn:aws:acm:us-east-1:537971897528:certificate/ffd2aea7-f339-46a8-85c4-95266d996f6f"
 
