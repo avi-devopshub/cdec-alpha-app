@@ -8,47 +8,47 @@
 
 pipeline {
     agent {
-        label 'ecs2'
+        label 'agent'
     }
 
     parameters {
         string(
             name: 'S3_BUCKET',
-            defaultValue: 'cdec-alpha-cbzpb-dev-frontend', 
+            defaultValue: 'avidevops.fun', 
             description: 'S3 bucket name for the frontend (e.g. cdec-frontend-dev-frontend)'
         )
         string(
             name: 'CLOUDFRONT_DISTRIBUTION_ID',
-            defaultValue: 'E3QOZ8B1IDKTCV',
+            defaultValue: 'E2T6MGGVRB64FP',
             description: 'CloudFront distribution ID (e.g. E1234567890ABC)'
         )
         string(
             name: 'VITE_AUTH_API',
-            defaultValue: 'https://api.infra-software-architect.online/api/auth',
+            defaultValue: 'https://api.avidevops.fun/api/auth',
             description: 'Auth API URL baked into the build'
         )
         string(
             name: 'VITE_COURSE_API',
-            defaultValue: 'https://api.infra-software-architect.online/api/courses',
+            defaultValue: 'https://api.avidevops.fun/api/courses',
             description: 'Course API URL baked into the build'
         )
         string(
             name: 'VITE_ENROLL_API',
-            defaultValue: 'https://api.infra-software-architect.online/api/enroll',
+            defaultValue: 'https://api.avidevops.fun/api/enroll',
             description: 'Enrollment API URL baked into the build'
         )
     }
 
     environment {
         APP_DIR = 'application/frontend'
-        AWS_DEFAULT_REGION = 'eu-west-1'
+        AWS_DEFAULT_REGION = 'ap-south-1'
     }
 
     stages {
 
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/AnupDudhe/cdec-alpha-app.git', branch: 'main'
+                git url: 'https://github.com/avi-devopshub/cdec-alpha-app.git', branch: 'main'
             }
         }
 
